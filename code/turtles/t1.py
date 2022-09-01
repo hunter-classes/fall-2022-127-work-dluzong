@@ -15,6 +15,13 @@ crush.right(90)
 crush.forward(50)
 crush.right(90)
 
+crush.up()
+crush.forward(100)
+crush.down()
+for i in range(4):
+    crush.forward(50)
+    crush.right(90)
+
 #create a second turtle
 #into the variable squirt
 #and make squirt draw a triangle
@@ -31,6 +38,13 @@ squirt.forward(50)
 squirt.left(120)
 squirt.forward(50)
 squirt.left(120)
+
+squirt.up()
+squirt.forward(100)
+squirt.down()
+for i in range(3):
+  squirt.forward(50)
+  squirt.left(120)
 
 wn.exitonclick()
 wn.mainloop()
