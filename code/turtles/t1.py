@@ -1,5 +1,10 @@
 import turtle
 
+def sample_function():
+  print("This is a function")
+  print("It can be used multiple times")
+
+sample_function()
 wn = turtle.Screen()  #screen makes a window
 
 crush = turtle.Turtle()  #makes a turtle
