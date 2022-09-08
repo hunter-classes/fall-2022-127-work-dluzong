@@ -17,3 +17,4 @@ def square():
 wn = turtle.Screen()
 
 square()
+wn.exitonclick()
