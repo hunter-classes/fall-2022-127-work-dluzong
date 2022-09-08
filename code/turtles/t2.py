@@ -18,3 +18,4 @@ wn = turtle.Screen()
 
 square()
 wn.exitonclick()
+wn.mainloop()
