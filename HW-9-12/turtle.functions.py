@@ -29,7 +29,7 @@ def hexagon(t, x, y, w, color, sidelen):
 
 #def ngon(t,numsides,x,y,color,width,sidelen):
 #code to draw the ngon
-def ngon(t, x, y, w, color, sidelen):
+def ngon(t, numsides, x, y, w, color, sidelen):
     """
   Draw a ngon using the turtle passed into t
   Parameters:
@@ -49,10 +49,10 @@ def ngon(t, x, y, w, color, sidelen):
     t.color(color)
     t.pendown()
     #draw a ngon
-    numsides = input("how many sides do you want your shape to have?")
-    for i in range(int(numsides)):
+    
+    for i in range(numsides):
         t.forward(sidelen)
-        t.left(360 / int(numsides))
+        t.left(360 / numsides)
 
 
 shape1 = turtle.Turtle()
@@ -60,7 +60,7 @@ shape1 = turtle.Turtle()
 hexagon(shape1, 70, -20, 2, "blue", 40)
 
 shape2 = turtle.Turtle()
-ngon(shape2, -50, 50, 1, "red", 30)
+ngon(shape2, 8, -50, 50, 1, "red", 30)
 
 wn = turtle.Screen()
 

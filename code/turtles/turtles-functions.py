@@ -1,6 +1,12 @@
 import turtle
 
-
+def position_turtle(t,x,y,w,color,sidelen):
+  t.penup()
+  t.goto(x, y)
+  t.width(w)
+  t.color(color)
+  t.pendown()
+  
 def square(t, x, y, w, color, sidelen):
     """
   Draw a square using the turtle passed into t
@@ -15,11 +21,7 @@ def square(t, x, y, w, color, sidelen):
   
   """
     #set location, color, and width
-    t.penup()
-    t.goto(x, y)
-    t.width(w)
-    t.color(color)
-    t.pendown()
+    position_turtle(t,x,y,w,color,sidelen)
     #draw a square
     for i in range(4):
         t.forward(sidelen)
@@ -42,11 +44,7 @@ def triangle(t, x, y, w, color, sidelen):
   
   """
     #set location, color, and width
-    t.penup()
-    t.goto(x, y)
-    t.width(w)
-    t.color(color)
-    t.pendown()
+    position_turtle(t,x,y,w,color,sidelen)
     #draw a triangle
     for i in range(3):
         t.forward(sidelen)
