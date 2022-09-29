@@ -22,7 +22,7 @@ print("---------------------")
 
 def piglatinify_v1(word):
   if word[-1] in ".?!":
-    end_of_sentence = true
+    end_of_sentence = True
     punctuation = word[-1]
     word = word[:-1]
   else:
@@ -48,23 +48,3 @@ def piglatinify_v1(word):
   if end_of_sentence:
     result = result + punctuation
   return result
-
-test_word = "Hello"
-result = piglatinify_v1(test_word)
-print(test_word, "-->", result)
-
-test_word = "Able"
-result = piglatinify_v1(test_word)
-print(test_word, "-->", result)
-
-test_word = "cable."
-result = piglatinify_v1(test_word)
-print(test_word, "-->", result)
-
-test_word = "able."
-result = piglatinify_v1(test_word)
-print(test_word, "-->", result)
-
-test_word = "Table!"
-result = piglatinify_v1(test_word)
-print(test_word, "-->", result)
