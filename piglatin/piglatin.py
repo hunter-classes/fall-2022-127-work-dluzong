@@ -25,10 +25,10 @@ try to also handle upper case words
     firstLetter = word[0]
     firstLetter = str(firstLetter)
     firstLetter = firstLetter.upper()
-
+    
     if firstLetter in vowel:
     #if firstLetter in 'aeiou':
-      result = word + "yay"
+      result = word.capitalize() + "yay"
 
     elif firstLetter in consonant:
         lenOfWord = len(word)
@@ -38,6 +38,12 @@ try to also handle upper case words
         secondLetter = secondLetter.upper()
         result = secondLetter + otherLetters + firstLetter + "ay"
         # or result = word[1:]+first+'ay'
+    
+    for punctuation in (".,?!"):
+      if punctuation in word:
+        punc = result.find(punctuation)
+        result = result[0:punc] + result[punc+1:] + result[punc]
+  
     return result
 
 test_word = "Hello"
@@ -48,14 +54,22 @@ test_word = "Able"
 result = piglatinify(test_word)
 print(test_word, "-->", result)
 
+test_word = "cable."
+result = piglatinify(test_word)
+print(test_word, "-->", result)
+
+test_word = "able."
+result = piglatinify(test_word)
+print(test_word, "-->", result)
+
 #bondify
-#def bondify(name):
-    #"""
-    #input: a string in the form "first last"
-    #returns: a string in the form "Last, First Last"
-    #"""
-   # loc = name.find(" ")
-   # return name[loc:] + ", " + name[0:loc] + " " + name[loc:]
+def bondify(name):
+    """
+    input: a string in the form "first last"
+    returns: a string in the form "Last, First Last"
+    """
+    loc = name.find(" ")
+    return name[loc:] + ", " + name[0:loc] + " " + name[loc:]
 
 
-#print(bondify("james bond"))
+print(bondify("james bond"))
