@@ -12,11 +12,14 @@ def findLargest(l):
 print(findLargest(['1','2','3','4','6','5']))
 
 def freq(l,v):
-  n = 0
-  for num in l:
-    if num == v:
-      n += 1
-  return n
+  #n = 0
+  #for num in l:
+  #  if num == v:
+  #    n += 1
+  #return n
+#applying list comprehension:
+  return len([x for x in l if x == v])
+
 def buildRandomList(size,maxvalue):
   #result = []
   #for x in range(size):
