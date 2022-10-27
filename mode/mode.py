@@ -30,4 +30,28 @@ def buildRandomList(size,maxvalue):
 
   
 print(freq(['1','2','2','3','4','5','5','2','6'],'2'))
+
+def mode(dataset):
+  '''
+  returns a mode of the dataset, that is the value that appears most frequently
+
+  if multiple values appear the same number of times and are most frequent, return any of them.
+
+  ex: mode([5,4,5,6,7,8,5,4]) --> 5 since 5 appears the most
+  mode([5,5,5,4,4,4,2,2,7,7,8,8,9,]) --> return 5 or 4 since both of those values appear 3 times which is the most
+  
+  strategy: assume first value is the mode, we can grab its frequency
+  for each remaining item in the dataset: 
+  count that items frequency and see if its the new mode so far
+  '''
+  modeSoFar = dataset[0]
+  freqSoFar = freq(dataset, modeSoFar)
+  for item in dataset[1:]:
+    if freq(dataset,item) > freqSoFar:
+      modeSoFar = item
+      freqSoFar = freq(dataset, modeSoFar)
+  return modeSoFar
+
+print(mode([1,2,3,1,1,1,2,3,4,2,2,2,2,2,2]))
+    
     
