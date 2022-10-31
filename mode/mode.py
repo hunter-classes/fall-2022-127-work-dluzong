@@ -1,7 +1,10 @@
 #findLargest(l) which takes in a list of numbers and returns the value of the smallest number
 
 #freq(l,v) which takes a list of numbers (l) and a value (v). The function will return the frequency of v, that is, the number of times that v appears in l.
+import datetime
 import random
+
+
 def findLargest(l):
   largestNum = l[0]
   for num in l[1:]:
@@ -9,7 +12,6 @@ def findLargest(l):
       largestNum = num
   return largestNum
 
-print(findLargest(['1','2','3','4','6','5']))
 
 def freq(l,v):
   #n = 0
@@ -20,6 +22,7 @@ def freq(l,v):
 #applying list comprehension:
   return len([x for x in l if x == v])
 
+
 def buildRandomList(size,maxvalue):
   #result = []
   #for x in range(size):
@@ -29,8 +32,6 @@ def buildRandomList(size,maxvalue):
   return result
 
   
-print(freq(['1','2','2','3','4','5','5','2','6'],'2'))
-
 def mode(dataset):
   '''
   returns a mode of the dataset, that is the value that appears most frequently
@@ -52,6 +53,16 @@ def mode(dataset):
       freqSoFar = freq(dataset, modeSoFar)
   return modeSoFar
 
-print(mode([1,2,3,1,1,1,2,3,4,2,2,2,2,2,2]))
-    
-    
+
+def testMode(size,maxValue):
+  dataset = buildRandomList(size,maxValue)
+  #print(dataset)
+  t = datetime.datetime.now()
+  starttime = t.microsecond / 1000
+  m = mode(dataset)
+  end = datetime.datetime.now()
+  elapsed = (end.microsecond / 1000) - starttime
+  print('size:', size, 'time:',elapsed)
+
+d = datetime.datetime.now()
+print(d)
