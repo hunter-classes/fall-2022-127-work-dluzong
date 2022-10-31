@@ -66,3 +66,15 @@ def testMode(size,maxValue):
 
 d = datetime.datetime.now()
 print(d)
+
+#testFinaLargest takes less time than testMode
+def testFindLargest(size,maxValue):
+  print("Dataset Size:", size)
+  dataset = buildRandomList(size, maxValue)
+  #print(dataset)
+  m = findLargest(dataset)
+  print("Largest: ", m)
+
+#testMode is slower since it includes frequency which is another function and frequency has a loop which takes up more time
+  #run time analysis --done a little in 135, and a lot in 235
+  
