@@ -71,17 +71,30 @@ def fastMode(dataset):
 
     # 3. the index with the highest
     # value in tallies is the mode
-  count = [0] * 100
-  for value in dataset:
-    count[value] += 1 
-  countSoFar = 0
-  modeSoFar = 0
-  for num in range(100):
-    if count[num] > countSoFar:
-      countSoFar = count[num]
-      modeSoFar = num
-  return modeSoFar
-      
+  
+  #count = [0] * 100
+  #for value in dataset:
+  #  count[value] += 1 
+  #countSoFar = 0
+  #modeSoFar = 0
+  #for num in range(100):
+  #  if count[num] > countSoFar:
+  #    countSoFar = count[num]
+  #    modeSoFar = num
+  #return modeSoFar
+
+  #tallies = []
+  #for i in range(100):
+    #tallies.append(100)
+  tallies = [0 for x in range(100)]   
+  for item in dataset:
+    tallies[item] = tallies[item]+1
+  mode_count = findLargest(tallies)
+  for i in range(len(tallies)):
+    if tallies[i] == mode_count:
+      return i
+  return i 
+  
 
 def testMode(size,maxValue):
   print("Dataset Size:", size)
@@ -98,8 +111,17 @@ def testFindLargest(size,maxValue):
   m = findLargest(dataset)
   print("Largest: ", m)
 
+
+def testFastMode(size,maxvalue):
+  dataset = buildRandomList(size,maxvalue)
+  print(dataset)
+  result = fastMode(dataset)
+  print(result)
+  
 #testFindLargest(80000,30)
-testMode(40000,30)
+#testMode(40000,30)
+
+testFastMode(20000,30)
 
 #testMode is slower since it includes frequency which is another function and frequency has a loop which takes up more time
   #run time analysis --done a little in 135, and a lot in 235

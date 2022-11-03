@@ -1,6 +1,6 @@
 #Extra 1: stored story in a file called "madlibs.txt" which is read in my program 
 #Extra 2: added unique replacement (e.g <NAME>) which is first selected randomly but is reused. 
-
+#
 import random
 
 madlibs_file = open("madlibs.txt","r")
@@ -35,7 +35,8 @@ def test_madlibs(story):
       word = word.replace("<VERB>", random.choice(verbs))  
     elif word == "<NAME>":
       word = word.replace("<NAME>", random_name)
-    new_madlib.append(word)
+    new_madlib.append(word.capitalize())
+    
   new_madlib = ' '.join(new_madlib)  
   return new_madlib
 
