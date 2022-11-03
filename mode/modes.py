@@ -5,9 +5,9 @@ import datetime
 import random
 
 
-def findLargest(l):
-  largestNum = l[0]
-  for num in l[1:]:
+def findLargest(dataset):
+  largestNum = dataset[0]
+  for num in dataset[1:]:
     if num > largestNum:
       largestNum = num
   return largestNum
@@ -46,26 +46,23 @@ def mode(dataset):
   count that items frequency and see if its the new mode so far
   '''
   modeSoFar = dataset[0]
-  freqSoFar = freq(dataset, modeSoFar)
+  freqSoFar = dataset.count(modeSoFar)
   for item in dataset[1:]:
-    if freq(dataset,item) > freqSoFar:
+    #outer loop --> n 
+    #Calling freq each time is n
+    #if freq(dataset,item) > freqSoFar:
+    if dataset.count(item) > freqSoFar:
       modeSoFar = item
-      freqSoFar = freq(dataset, modeSoFar)
+      freqSoFar = dataset.count(item)
   return modeSoFar
 
 
 def testMode(size,maxValue):
+  print("Dataset Size:", size)
   dataset = buildRandomList(size,maxValue)
   #print(dataset)
-  t = datetime.datetime.now()
-  starttime = t.microsecond / 1000
   m = mode(dataset)
-  end = datetime.datetime.now()
-  elapsed = (end.microsecond / 1000) - starttime
-  print('size:', size, 'time:',elapsed)
-
-d = datetime.datetime.now()
-print(d)
+  print("Mode:",m)
 
 #testFinaLargest takes less time than testMode
 def testFindLargest(size,maxValue):
@@ -74,6 +71,9 @@ def testFindLargest(size,maxValue):
   #print(dataset)
   m = findLargest(dataset)
   print("Largest: ", m)
+
+#testFindLargest(80000,30)
+testMode(40000,30)
 
 #testMode is slower since it includes frequency which is another function and frequency has a loop which takes up more time
   #run time analysis --done a little in 135, and a lot in 235
