@@ -56,6 +56,32 @@ def mode(dataset):
       freqSoFar = dataset.count(item)
   return modeSoFar
 
+def fastMode(dataset):
+    # assume all values in dataset
+    # are between 0 and 99 inclusive
+
+    # 1. make a list of 100 slots
+    # and set them all to 0
+    # this will store our tallies
+    
+    # 2. Loop through our dataset
+    # and for each item incremement
+    # (add 1) to the appropriate
+    # slot in the tallies list
+
+    # 3. the index with the highest
+    # value in tallies is the mode
+  count = [0] * 100
+  for value in dataset:
+    count[value] += 1 
+  countSoFar = 0
+  modeSoFar = 0
+  for num in range(100):
+    if count[num] > countSoFar:
+      countSoFar = count[num]
+      modeSoFar = num
+  return modeSoFar
+      
 
 def testMode(size,maxValue):
   print("Dataset Size:", size)
