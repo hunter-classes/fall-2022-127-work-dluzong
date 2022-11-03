@@ -1,13 +1,11 @@
+#Extra 1: stored story in a file called "madlibs.txt" which is read in my program 
+
 import random
+madlibs_file = open("madlibs.txt","r")
+if madlibs_file.mode == "r":
+  contents = madlibs_file.read()
 
-sample_sentence ='''
-Today there was a <ADJECTIVE> <ANIMAL> who <ADVERB> woke up very hungry.
-
-They had an appetite for <FOOD> and searched and searched, eventually finding it behind a <NOUN> and ate it.
-
-When they were finished, they <VERB> back home.
-'''
-
+#sample_sentence ='''Today there was a <ADJECTIVE> <ANIMAL> who <ADVERB> woke up very hungry. They had an appetite for <FOOD> and searched and searched, eventually finding it behind a <NOUN> and ate it. When they were finished, they <VERB> back home, passing by a <NOUN> on their way back.'''
 
 adjectives = ['beautiful','ugly','cute','silly','sparkly']
 animals = ['dog','dragon','cat','unicorn','bunny']
@@ -16,26 +14,33 @@ foods = ['cheese','lasagna','breadsticks','lettuce','steak']
 nouns = ['can of beans','car','frog', 'rock','tree']
 verbs = ['walked','crawled','bolted','ran','hopped']
 
-split_sample_sentence = sample_sentence.split()
+split_contents = contents.split()
 
-x = 0
-while x < 2:
+def test_madlibs(story):
   new_madlib = []
-  for word in split_sample_sentence:
+  for word in split_contents:
     if word == "<ADJECTIVE>":
-      word = word.replace("<ADJECTIVE>", str(random.choice(adjectives)))
+      word = word.replace("<ADJECTIVE>", random.choice(adjectives))
+    
     elif word == "<ANIMAL>":
-      word = word.replace("<ANIMAL>", str(random.choice(animals)))
+      word = word.replace("<ANIMAL>", random.choice(animals))
+    
     elif word == "<ADVERB>":
-      word = word.replace("<ADVERB>", str(random.choice(adverbs)))
+      word = word.replace("<ADVERB>", random.choice(adverbs))
+    
     elif word == "<FOOD>":
-      word = word.replace("<FOOD>", str(random.choice(foods)))
+      word = word.replace("<FOOD>", random.choice(foods))
+    
     elif word == "<NOUN>":
-      word = word.replace("<NOUN>", str(random.choice(nouns)))
+      word = word.replace("<NOUN>", random.choice(nouns))
+    
     elif word == "<VERB>":
-      word = word.replace("<VERB>", str(random.choice(verbs)))           
+      word = word.replace("<VERB>", random.choice(verbs))
+    
     new_madlib.append(word)
+    #x = x+1
   new_madlib = ' '.join(new_madlib)  
-  print(new_madlib)
-  print(' ')
-  x = x+1
+    
+  return new_madlib
+
+print(test_madlibs(split_contents))
