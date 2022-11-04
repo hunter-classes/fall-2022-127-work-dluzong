@@ -1,5 +1,1 @@
-Today there was a <ADJECTIVE> <ANIMAL> named <NAME> who <ADVERB> woke up very hungry.
-
-<NAME> had an appetite for <FOOD> and searched and searched, eventually finding it behind a <NOUN> and ate it.
-
-When they were finished, <NAME> <VERB> back home, passing by a <NOUN> on their way back.
+There was a <ADJECTIVE> <ANIMAL> named <NAME> who <ADVERB> woke up very hungry. <NAME> had an appetite for <FOOD> and searched and searched, eventually finding it behind a <NOUN> and ate it. When they were finished, <NAME> <VERB> back home, passing by a <NOUN> on their way back.
