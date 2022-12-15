@@ -47,6 +47,7 @@ def compareAvg(avg1,avg2):
 
 calDifference = calAvg(drink_cal) - calAvg(cereal_cal)
 
+#comparison of two averages
 print("\nThe greater average number of calories is:", compareAvg(calAvg(cereal_cal),calAvg(drink_cal)))
 print("On average, Starbucks drinks have", calDifference, "more calories than cereal")    
   
